@@ -2,7 +2,7 @@ export default {
   home: {
     title: 'Home',
     image: '/images/color.png',
-    body: 'INFUSION is ideas merging, minds colliding, cultural sensibilities and the infinite possibilities.',
+    body: 'This is an english custom text.',
   },
   about: {
     title: 'About',
