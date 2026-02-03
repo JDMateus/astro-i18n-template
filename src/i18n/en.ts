@@ -1,7 +1,7 @@
 export default {
   home: {
     title: 'Home',
-    image: '/images/heart.png',
+    image: '/images/flags.png',
     body: 'This is an english custom text.',
   },
   about: {
