@@ -1,0 +1,17 @@
+---
+import { type Languages, useTranslation } from '../i18n';
+
+interface Props {
+  locale: Languages;
+}
+
+const { locale } = Astro.props;
+const t = useTranslation(locale);
+---
+
+<nav>
+  <div>
+    <a href={`/${locale}`}>{t.home.title}</a>
+    <a href={`/${locale}/about`}>{t.about.title}</a>
+  </div>
+</nav>

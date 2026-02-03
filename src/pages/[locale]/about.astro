@@ -1,0 +1,18 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { useTranslation } from '../../i18n';
+import { LOCALES } from '../../constants';
+
+export function getStaticPaths() {
+  return LOCALES.map(locale => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale;
+const t = useTranslation(locale);
+---
+
+<MainLayout locale={locale}>
+  <h1>{t.about.title}</h1>
+  <img src={t.about.image} alt='ai' />
+  <p>{t.about.body}</p>
+</MainLayout>

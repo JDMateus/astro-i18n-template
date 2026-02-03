@@ -1,0 +1,24 @@
+---
+import { languages, type Languages } from '../i18n';
+
+interface Props {
+  locale: Languages;
+}
+
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<footer>
+  <ul>
+    {
+      Object.entries(languages).map(([language, label]) => {
+        return (
+          <li>
+            <a href={currentPath.replace(locale, language)}>{label}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</footer>
