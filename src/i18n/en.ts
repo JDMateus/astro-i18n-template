@@ -6,7 +6,7 @@ export default {
   },
   home: {
     title: 'Home',
-    image: '/images/flags.png',
+    image: '/images/color.png',
     body: 'INFUSION is ideas merging, minds colliding, cultural sensibilities and the infinite possibilities.',
   },
   about: {
