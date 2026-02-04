@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --black: 15, 18, 25;
+  --gray: 96, 115, 159;
+  --gray-light: 229, 233, 240;
+  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+}
+
 html,
 body {
   margin: 0;
@@ -7,7 +14,9 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-size: 20px;
   font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(var(--gray-gradient)) no-repeat;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
   height: 100dvh;
@@ -24,30 +33,54 @@ p {
   text-align: center;
 }
 
-nav {
-  padding: 32px;
-  margin-left: auto;
-}
-
-main {
-  margin: 0 auto;
-  max-width: 968px;
+a {
+  text-decoration: none;
 }
 
 img {
-  width: 300px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
   display: block;
   place-self: center;
-  padding-block: 32px;
+  object-fit: cover;
+}
+
+nav {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(var(--black), 5%);
+}
+
+main {
+  overflow-y: auto;
+  margin: 0 auto;
+  width: 720px;
+  max-width: calc(100% - 2em);
+  padding: 3em 1em;
+}
+
+main::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+article {
+  width: calc(50% - 1rem);
 }
 
 footer {
   padding: 32px;
-  background-color: black;
+  display: flex;
+  gap: 32px;
+  background: linear-gradient(var(--gray-gradient)) no-repeat;
 
   a {
-    color: white;
+    color: rgb(var(--gray));
   }
 }

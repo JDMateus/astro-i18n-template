@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { useTranslation } from '../../i18n';
 import { LOCALES } from '../../constants';
+import { Image } from 'astro:assets';
 
 export function getStaticPaths() {
   return LOCALES.map(locale => ({ params: { locale } }));
@@ -13,6 +14,6 @@ const t = useTranslation(locale);
 
 <MainLayout locale={locale}>
   <h1>{t.home.title}</h1>
-  <img src={t.home.image} alt='color' />
+  <Image src={t.home.image} width={300} height={300} alt='home-image' />
   <p>{t.home.body}</p>
 </MainLayout>

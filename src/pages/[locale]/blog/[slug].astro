@@ -22,6 +22,18 @@ const { Content } = await render(post);
 const { title, pubDate, heroImage } = Astro.props.data;
 ---
 
+<style>
+  img {
+    border-radius: 12px;
+    margin-bottom: 32px;
+  }
+
+  time {
+    display: block;
+    text-align: center;
+  }
+</style>
+
 <MainLayout locale={locale as Languages}>
   <Image width={600} height={300} src={heroImage} alt='' />
   <time>{pubDate}</time>

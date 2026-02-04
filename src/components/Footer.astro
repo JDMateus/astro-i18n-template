@@ -10,15 +10,9 @@ const currentPath = Astro.url.pathname;
 ---
 
 <footer>
-  <ul>
-    {
-      Object.entries(languages).map(([language, label]) => {
-        return (
-          <li>
-            <a href={currentPath.replace(locale, language)}>{label}</a>
-          </li>
-        );
-      })
-    }
-  </ul>
+  {
+    Object.entries(languages).map(([language, label]) => {
+      return <a href={currentPath.replace(locale, language)}>{label}</a>;
+    })
+  }
 </footer>

@@ -13,22 +13,34 @@ const { locale } = Astro.params;
 const posts = await getCollection('blog', data => data.id.startsWith(locale));
 ---
 
+<style>
+  img {
+    place-self: initial;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  h4 {
+    margin: 0;
+  }
+</style>
+
 <MainLayout locale={locale}>
-  <ul>
+  <section>
     {
       posts.map(post => {
         const [_, slug] = post.slug.split('/');
 
         return (
-          <li>
+          <article>
             <a href={`/${locale}/blog/${slug}`}>
-              <h4>{post.data.title}</h4>
-              <p>{post.data.pubDate}</p>
               <Image width={300} height={200} src={post.data.heroImage} alt='' />
+              <h4>{post.data.title}</h4>
+              <time>{post.data.pubDate}</time>
             </a>
-          </li>
+          </article>
         );
       })
     }
-  </ul>
+  </section>
 </MainLayout>
