@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import { getCollection } from 'astro:content';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import type { Languages } from '../../../i18n';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  const paths = posts.map(post => {
+    const [locale, slug] = post.slug.split('/');
+    return { params: { locale, slug }, props: post };
+  });
+
+  return paths;
+}
+
+const post = Astro.props;
+const { locale } = Astro.params;
+const { Content } = await render(post);
+const { title, pubDate, heroImage } = Astro.props.data;
+---
+
+<MainLayout locale={locale as Languages}>
+  <Image width={600} height={300} src={heroImage} alt='' />
+  <time>{pubDate}</time>
+  <h1>{title}</h1>
+  <hr />
+  <Content />
+</MainLayout>

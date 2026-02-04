@@ -36,6 +36,8 @@ main {
 
 img {
   width: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   display: block;
   place-self: center;
   padding-block: 32px;

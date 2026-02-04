@@ -7,7 +7,7 @@ export function getStaticPaths() {
   return LOCALES.map(locale => ({ params: { locale } }));
 }
 
-const locale = Astro.params.locale;
+const { locale } = Astro.params;
 const t = useTranslation(locale);
 ---
 

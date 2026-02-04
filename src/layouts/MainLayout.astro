@@ -2,10 +2,11 @@
 import { ClientRouter } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import type { Languages } from '../i18n';
 import '../styles/global.css';
 
 interface Props {
-  locale: 'en' | 'es';
+  locale: Languages;
 }
 
 const { locale } = Astro.props;
